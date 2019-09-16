@@ -23,7 +23,7 @@ public class EncapsulateTheData {
 	// the member variables' getters and setters are working
 
 	private int itemsReceived; // must not be negative. All negative arguments get set to 0.
-	private float degreesTurned; // must be locked between 0.0 and 360.0 inclusive.
+	private double degreesTurned; // must be locked between 0.0 and 360.0 inclusive.
 	private String nomenclature = " "; // must not be set to a blank string. Blank Strings get set to a space
 	private Object memberObj; // must not be a String. If it is a String, set it equal to a new Object();
 
@@ -39,15 +39,18 @@ public class EncapsulateTheData {
 		}
 	}
 
-	public float getDegreesTurned() {
+	public double getDegreesTurned() {
 		return degreesTurned;
 	}
 
-	public void setDegreesTurned(float degreesTurned) {
+	public void setDegreesTurned(double degreesTurned) {
 		if (degreesTurned <= 0.0) {
-			this.degreesTurned = 0.0f;
+			this.degreesTurned = 0.0;
 		} else if (degreesTurned >= 360.0) {
-			this.degreesTurned = 360.0f;
+			this.degreesTurned = 360.0;
+		}
+		else{
+			this.degreesTurned = degreesTurned;
 		}
 	}
 
@@ -68,7 +71,7 @@ public class EncapsulateTheData {
 	
 	public void setMemberObj(Object memberObj) {
 		if (memberObj instanceof String) {
-			memberObj = new Object();
+			this.memberObj = new Object();
 		}
 		else {
 			this.memberObj = memberObj;
