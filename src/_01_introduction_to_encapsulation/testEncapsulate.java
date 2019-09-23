@@ -44,6 +44,11 @@ public class testEncapsulate {
 	@Test
 	public void testMemberObj() {
 		tester.setMemberObj(new String());
-		assertEquals(new Object(), tester.getMemberObj());
+		assertTrue(tester.getMemberObj() instanceof Object);
+		
+		tester.setMemberObj(new Integer(9));
+		assertTrue(tester.getMemberObj() instanceof Integer);
+		//tester.setMemberObj(new Integer(9));
+		//assertEquals(new Integer(9), tester.getMemberObj());
 	}
 }
