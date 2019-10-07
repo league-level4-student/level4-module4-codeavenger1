@@ -22,11 +22,15 @@ public abstract class Polymorph {
 	}
 
 	public abstract void draw(Graphics g);
-
+	
 	public int getX() {
 		return x;
 	}
 
+	public void setX(int x) {
+		this.x = x;
+	}
+	
 	public int getY() {
 		return y;
 	}

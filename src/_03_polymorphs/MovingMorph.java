@@ -3,7 +3,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class MovingMorph extends Polymorph {
-
+	int speed = 5;
 	MovingMorph(int x, int y, int width, int height) {
 		super(x, y, width, height);
 	}
@@ -15,9 +15,8 @@ public class MovingMorph extends Polymorph {
 	}
 	
 	public void update() {
-		int speed = 5;
+		setX(getX()+speed);
 		
-		setX(getX() - 5);
 		
 	}
 
