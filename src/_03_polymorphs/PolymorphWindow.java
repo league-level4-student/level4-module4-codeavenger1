@@ -17,23 +17,17 @@ public class PolymorphWindow extends JPanel implements ActionListener{
     
     private JFrame window;
     private Timer timer;
-    
-//    RedMorph r;
-//    Polymorph bluePoly;
-//    MovingMorph moving;
+    ArrayList<Polymorph> morphList = new ArrayList<Polymorph>();
+  //  RedMorph r;
+   // Polymorph bluePoly;
+    //MovingMorph moving;
+   // CircleMorph circle;
     
     public static void main(String[] args) {
    	 new PolymorphWindow().buildWindow();
-   	 ArrayList<Polymorph> morphList = new ArrayList<Polymorph>();
-   	 morphList.add(new BluePolymorph(50, 50, 20, 20));
-   	 morphList.add(new RedMorph(100, 100, 20, 20));
-   	 morphList.add(new MovingMorph(40, 40, 20, 20));
    	 
-   	 for (Polymorph i: morphList) {
-		i.update();
-		i.draw(C);
-		
-	}
+   	
+   	 
     }
     
     public void buildWindow(){
@@ -43,10 +37,18 @@ public class PolymorphWindow extends JPanel implements ActionListener{
    	 window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
    	 window.pack();
    	 window.setVisible(true);
+   	 MouseMorph mousey = new MouseMorph(100, 100, 20, 20);
+   	 window.addMouseMotionListener(mousey);
    	 
-//   	 bluePoly = new BluePolymorph(50, 50, 20, 20);
-//   	 r = new RedMorph(100, 100, 20, 20);
-//   	 moving = new MovingMorph(40, 40, 20, 20);
+   	 morphList.add(new BluePolymorph(50, 50, 20, 20));
+   	 morphList.add(new RedMorph(100, 100, 20, 20));
+   	 morphList.add(new MovingMorph(40, 40, 20, 20));
+   	 morphList.add(new CircleMorph(200, 200, 20, 20));
+   	 morphList.add(mousey);
+   	 
+  	 //bluePoly = new BluePolymorph(50, 50, 20, 20);
+     //	 r = new RedMorph(100, 100, 20, 20);
+ 	 //moving = new MovingMorph(40, 40, 20, 20);
    	 
    	 timer = new Timer(1000 / 30, this);
    	 timer.start();
@@ -58,15 +60,26 @@ public class PolymorphWindow extends JPanel implements ActionListener{
    	 g.fillRect(0, 0, 500, 500);
    	
    	 //draw polymorph
-//   	 bluePoly.draw(g);
-//   	 r.draw(g);
-//   	 moving.draw(g);
+   	for (Polymorph i: morphList) {
+		i.draw(g);
+		
+	}
+   	 
+  	// bluePoly.draw(g);
+  	 //r.draw(g);
+  	 //moving.draw(g);
+  	 //circle.draw(g);
+  	
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
    	 repaint();
-//   	 moving.update();
+   	for (Polymorph i: morphList) {
+		i.update();
+		
+	}
+   //	 moving.update();
     }
     
  

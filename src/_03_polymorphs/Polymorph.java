@@ -3,13 +3,13 @@ package _03_polymorphs;
 import java.awt.Graphics;
 
 public abstract class Polymorph {
-	private int x;
-	private int y;
+	 int x;
+	 int y;
 
-	private int width;
-	private int height;
+	 int width;
+	 int height;
 
-	Polymorph(int x, int y, int width, int height) {
+  Polymorph(int x, int y, int width, int height) {
 		this.x = x;
 		this.y = y;
 		
