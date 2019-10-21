@@ -39,12 +39,18 @@ public class PolymorphWindow extends JPanel implements ActionListener{
    	 window.setVisible(true);
    	 MouseMorph mousey = new MouseMorph(100, 100, 20, 20);
    	 window.addMouseMotionListener(mousey);
+   	 MessageMorph message = new MessageMorph(300, 300, 20, 20);
+   	 window.addMouseListener(message);
+   	 ImageMorph img = new ImageMorph(400, 400, 20, 20);
+   	 window.addMouseListener(img);
    	 
    	 morphList.add(new BluePolymorph(50, 50, 20, 20));
    	 morphList.add(new RedMorph(100, 100, 20, 20));
    	 morphList.add(new MovingMorph(40, 40, 20, 20));
    	 morphList.add(new CircleMorph(200, 200, 20, 20));
    	 morphList.add(mousey);
+   	 morphList.add(message);
+   	 morphList.add(img);
    	 
   	 //bluePoly = new BluePolymorph(50, 50, 20, 20);
      //	 r = new RedMorph(100, 100, 20, 20);
