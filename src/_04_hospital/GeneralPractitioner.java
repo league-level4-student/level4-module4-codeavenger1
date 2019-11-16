@@ -4,4 +4,7 @@ public class GeneralPractitioner extends Doctor{
 	public boolean makesHouseCalls() {
 		return true;
 	}
+	public void assignPatients() {
+		return ;
+	}
 }

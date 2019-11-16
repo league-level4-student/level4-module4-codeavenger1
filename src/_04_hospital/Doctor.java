@@ -9,4 +9,5 @@ public class Doctor {
 	public boolean makesHouseCalls() {
 		return false;
 	}
+	
 }
