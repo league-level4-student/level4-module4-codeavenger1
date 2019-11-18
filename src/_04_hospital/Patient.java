@@ -1,13 +1,15 @@
 package _04_hospital;
 
 public class Patient {
+	boolean feelsCaredFor = false;
+	
 	public boolean feelsCaredFor() {
-		return false;
+		return feelsCaredFor;
 	}
 	
-	public boolean checkPulse() {
-		return false;
-		
+	public void checkPulse() {
+			this.feelsCaredFor = true;
 	}
+	
 	
 }
