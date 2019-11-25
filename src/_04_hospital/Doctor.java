@@ -17,7 +17,7 @@ public class Doctor {
 	}
 	
 	public void assignPatient(Patient p) throws DoctorFullException {
-		System.out.println(patientList.size());
+		
 		if (patientList.size() > 2) {
 			throw new DoctorFullException();
 		}
@@ -35,5 +35,6 @@ public class Doctor {
 			patientList.get(i).checkPulse();
 		}
 	}
+	
 	
 }

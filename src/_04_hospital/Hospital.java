@@ -24,4 +24,16 @@ public class Hospital {
 	public ArrayList<Patient> getPatients() {
 		return patientArray;
 	}
-}
+	
+	public void assignPatientsToDoctors() {
+		for (int i = 0; i < patientArray.size(); i++) {
+			for (int j = 0; j < docArray.size(); j++) {
+				
+				if (docArray.get(j).patientList.size()<3) {
+					docArray.get(j).patientList.add(patientArray.get(i));
+					break;
+				}
+			}
+		}
+	}
+	}
